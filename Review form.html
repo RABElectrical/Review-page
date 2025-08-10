@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leave Us a Review | R.A.B Electrical</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #15316f;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+    }
+    .container {
+      background: #d0d0d0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+    }
+    .logo {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 0rem;
+    }
+    h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 40px;
+      font-weight: 500;
+      color: #15316f;
+      letter-spacing: 2px;
+      margin-top: -0.25rem;
+      margin-bottom: -0.1rem;
+    }
+    p {
+      margin: 1rem 0;
+      color: #333333;
+    }
+    .review-links a {
+      display: block;
+      margin: 1rem auto;
+      width: 90%;
+      padding: 0.8rem 1rem;
+      background-color: #8a8a8a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.7s;
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .review-links a:hover {
+      background-color: #5d5d5d;
+    }
+    .review-links a i {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 2rem;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 12px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .close-button {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close-button:hover,
+    .close-button:focus {
+      color: black;
+      text-decoration: none;
+    }
+    .modal-content h2 {
+        margin-top: -1rem;
+        border: 2px solid #888;
+        padding: 0.5rem;
+        border-radius: 8px;
+        color: #15316f;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    .modal-tnc {
+      display: block;
+      color: #888;
+      font-style: italic;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    .modal-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #15316f;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+      font-weight: 700;
+    }
+    .modal-button:hover {
+      background-color: #0d2146;
+    }
+    .funnel-step {
+      display: none;
+    }
+    .funnel-step.active {
+      display: block;
+    }
+    .review-buttons.google {
+      background-color: #4285F4;
+    }
+    .review-buttons.facebook {
+      background-color: #1877F2;
+    }
+    .review-buttons.other {
+      background-color: #f7941d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="RAB General Logo.png" alt="R.A.B Electrical Logo" class="logo">
+    
+    <h1>Thanks for choosing<br>R.A.B Electrical</h1>
+    
+    <div id="step-1" class="funnel-step active">
+        <p>Your feedback means the world to us. How was your experience?</p>
+        <div class="review-links">
+            <a href="#" class="review-buttons" onclick="showStep2('positive')">I had a great experience!</a>
+            <a href="#" class="review-buttons" onclick="showStep2('negative')">I have some feedback.</a>
+        </div>
+    </div>
+    
+    <div id="step-2-positive" class="funnel-step">
+        <p>Awesome! Please take a moment to leave us a review:</p>
+        <div class="review-links">
+            <a href="https://www.ilovefrogs.com" target="_blank" class="review-buttons google">
+                <i class="fab fa-google"></i> Leave a Google Review
+            </a>
+            <a href="#" target="_blank" class="review-buttons facebook">
+                <i class="fab fa-facebook"></i> Leave a Facebook Review
+            </a>
+            <a href="#" target="_blank" class="review-buttons other">Leave a MyBuilder / RatedPeople Review</a>
+        </div>
+    </div>
+
+    <div id="step-2-negative" class="funnel-step">
+        <p>We're sorry to hear that. Please email us your feedback directly so we can improve.</p>
+        <div class="review-links">
+            <a href="mailto:your_email@example.com" class="review-buttons other">
+                <i class="fas fa-envelope"></i> Send an Email
+            </a>
+        </div>
+    </div>
+    
+    <p>If you've had a great experience, sharing it helps other customers find and trust us too!</p>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content" id="modalContent">
+      <span class="close-button">&times;</span>
+      
+      <h2>Review - Refer - Reward</h2>
+      
+      <p>Recommend us to a friend and you'll both be entered into a draw to win a <strong>£100 Amazon voucher</strong>.</p>
+      
+      <p class="modal-tnc">ps.. there's no limit</p>
+      
+      <a href="rules.html" class="modal-button">Learn More</a>
+    </div>
+  </div>
+
+  <script>
+    function showStep2(type) {
+      document.getElementById('step-1').classList.remove('active');
+      if (type === 'positive') {
+        document.getElementById('step-2-positive').classList.add('active');
+      } else {
+        document.getElementById('step-2-negative').classList.add('active');
+      }
+    }
+  </script>
+
+  <script>
+    var modal = document.getElementById("myModal");
+    var modalContent = document.getElementById("modalContent");
+    var span = document.getElementsByClassName("close-button")[0];
+
+    window.onload = function() {
+      setTimeout(function() {
+        modal.style.display = "block";
+        setTimeout(function() {
+          modalContent.style.opacity = "1";
+        }, 10);
+      }, 3000);
+    }
+
+    span.onclick = function() {
+      modalContent.style.opacity = "0";
+      setTimeout(function() {
+        modal.style.display = "none";
+      }, 500);
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modalContent.style.opacity = "0";
+        setTimeout(function() {
+          modal.style.display = "none";
+        }, 500);
+      }
+    }
+  </script>
+
+</body>
+</html>
