@@ -421,9 +421,9 @@ footer {
     margin: 2rem auto;
 }
 .review-funnel-logo, .rules-logo {
-    max-width: 150px;
+    max-width: 250px;
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: -2rem;
 }
 .review-funnel-heading, .rules-heading {
     color: #15316f;
@@ -600,4 +600,5 @@ footer {
 @keyframes slideUp {
     from { transform: translateY(50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+
 }
